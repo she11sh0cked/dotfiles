@@ -195,7 +195,6 @@ bindkey '^[[1;5C' forward-word  # [Ctrl]+[RightArrow]: Forward word
 bindkey '^[[1;5D' backward-word # [Ctrl]+[LeftArrow]: Backward word
 bindkey '^[[3~' delete-char     # [Delete]: Delete char
 
-alias git='git --no-pager -c color.ui=always'                                  # Disable pager, Colorize
 alias rm='rm -vI'                                                              # Verbose, Interactive
 alias vim='nvim'                                                               # Use neovim as vim
 alias ls='exa --icons --color=auto --group-directories-first --classify --git' # Use exa as ls
