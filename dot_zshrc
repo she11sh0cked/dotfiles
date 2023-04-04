@@ -159,11 +159,16 @@ zinit light starship/starship
 # Plugins
 # - - - - - - - - - - - - - - - - - - - -
 
-zinit wait lucid for light-mode \
-    zdharma-continuum/fast-syntax-highlighting \
-    zpm-zsh/colorize \
-    zsh-users/zsh-autosuggestions
+# Load Syntax Highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
+# Load Colorize
+zinit light zpm-zsh/colorize
+
+# Load Autosuggestions
+zinit light zsh-users/zsh-autosuggestions
+
+# Load Better Yarn Completions
 zinit ice atload'compdef _yarn_completion yarn' #TODO: this is stupid. why do i need to do this? >:(
 zinit light chrisands/zsh-yarn-completions
 
