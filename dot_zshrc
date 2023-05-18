@@ -1,3 +1,7 @@
+if command -v github-copilot-cli &> /dev/null; then
+    eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
+fi
+
 eval "$(antidot init)" # Load Antidot
 
 # - - - - - - - - - - - - - - - - - - - -
