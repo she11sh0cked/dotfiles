@@ -12,5 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.mapleader = " "
+
 -- Load lazy.nvim
-require("lazy").setup()
+require("lazy").setup({
+  "github/copilot.vim"
+})
