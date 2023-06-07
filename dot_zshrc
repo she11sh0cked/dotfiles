@@ -213,6 +213,10 @@ if command -v antidot &> /dev/null; then
     eval "$(antidot init)" # Load Antidot
 fi
 
+if command -v nvim &> /dev/null; then
+    export EDITOR='nvim'
+fi
+
 # foreach piece (
 #     exports.zsh
 #     node.zsh
