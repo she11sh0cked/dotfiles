@@ -1,11 +1,3 @@
-if command -v github-copilot-cli &> /dev/null; then
-    eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
-fi
-
-if command -v antidot &> /dev/null; then
-    eval "$(antidot init)" # Load Antidot
-fi
-
 # - - - - - - - - - - - - - - - - - - - -
 # Zsh Core Configuration
 # - - - - - - - - - - - - - - - - - - - -
@@ -189,7 +181,7 @@ zinit ice atload'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" hist
 zinit light zsh-users/zsh-history-substring-search
 
 # Load NVM
-zinit ice atinit'export NVM_COMPLETION=true; export NVM_LAZY_LOAD=true; export NVM_AUTO_USE=true'
+zinit ice atinit'export NVM_COMPLETION=true; export NVM_AUTO_USE=true'
 zinit light lukechilds/zsh-nvm
 
 # Load ZSH-Completions. Recommended to be loaded last.
@@ -212,6 +204,14 @@ alias ls='exa --icons --color=auto --group-directories-first --classify --git' #
 alias tree='ls --tree'                                                         # Use exa as tree
 
 path+=($HOME/.local/bin)                                                       # Add local bin to PATH
+
+if command -v github-copilot-cli &> /dev/null; then
+    eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
+fi
+
+if command -v antidot &> /dev/null; then
+    eval "$(antidot init)" # Load Antidot
+fi
 
 # foreach piece (
 #     exports.zsh
