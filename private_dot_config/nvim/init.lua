@@ -19,3 +19,7 @@ vim.g.mapleader = " "
 require("lazy").setup({
   "github/copilot.vim"
 })
+
+-- Enable Copilot for all filetypes by setting the * key to true
+vim.g.copilot_filetypes = { ["*"] = true }
+
