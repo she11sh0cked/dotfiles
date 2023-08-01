@@ -1,4 +1,13 @@
 # - - - - - - - - - - - - - - - - - - - -
+# Early Load
+# - - - - - - - - - - - - - - - - - - - -
+
+# Antidot modifies the environment, so it must be loaded first.
+if command -v antidot &> /dev/null; then
+    eval "$(antidot init)" # Load Antidot
+fi
+
+# - - - - - - - - - - - - - - - - - - - -
 # Zsh Core Configuration
 # - - - - - - - - - - - - - - - - - - - -
 
@@ -207,10 +216,6 @@ path+=($HOME/.local/bin)                                                       #
 
 if command -v github-copilot-cli &> /dev/null; then
     eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
-fi
-
-if command -v antidot &> /dev/null; then
-    eval "$(antidot init)" # Load Antidot
 fi
 
 if command -v nvim &> /dev/null; then
