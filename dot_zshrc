@@ -208,17 +208,20 @@ bindkey '^[[1;5D' backward-word # [Ctrl]+[LeftArrow]: Backward word
 bindkey '^[[3~' delete-char     # [Delete]: Delete char
 
 alias rm='rm -vI'                                                              # Verbose, Interactive
-alias vim='nvim'                                                               # Use neovim as vim
-alias ls='exa --icons --color=auto --group-directories-first --classify --git' # Use exa as ls
-alias tree='ls --tree'                                                         # Use exa as tree
 
 path+=($HOME/.local/bin)                                                       # Add local bin to PATH
+
+if command -v exa &> /dev/null; then
+    alias ls='exa --icons --color=auto --group-directories-first --classify --git' # Use exa as ls
+    alias tree='ls --tree'                                                         # Use exa as tree
+}
 
 if command -v github-copilot-cli &> /dev/null; then
     eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
 fi
 
 if command -v nvim &> /dev/null; then
+    alias vim='nvim'
     export EDITOR='nvim'
 fi
 
