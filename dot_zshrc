@@ -214,7 +214,7 @@ path+=($HOME/.local/bin)                                                       #
 if command -v exa &> /dev/null; then
     alias ls='exa --icons --color=auto --group-directories-first --classify --git' # Use exa as ls
     alias tree='ls --tree'                                                         # Use exa as tree
-}
+fi
 
 if command -v github-copilot-cli &> /dev/null; then
     eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
