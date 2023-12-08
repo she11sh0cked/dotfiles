@@ -211,9 +211,9 @@ alias rm='rm -vI'                                                              #
 
 path+=($HOME/.local/bin)                                                       # Add local bin to PATH
 
-if command -v exa &> /dev/null; then
-    alias ls='exa --icons --color=auto --group-directories-first --classify --git' # Use exa as ls
-    alias tree='ls --tree'                                                         # Use exa as tree
+if command -v eza &> /dev/null; then
+    alias ls='eza --icons --color=auto --group-directories-first --classify --git' # Use eza as ls
+    alias tree='ls --tree'                                                         # Use eza as tree
 fi
 
 if command -v github-copilot-cli &> /dev/null; then
