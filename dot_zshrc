@@ -170,6 +170,7 @@ zinit light starship/starship
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 # Load Colorize
+zinit light zpm-zsh/colors
 zinit light zpm-zsh/colorize
 
 # Load Autosuggestions
