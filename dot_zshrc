@@ -217,8 +217,9 @@ if command -v eza &> /dev/null; then
     alias tree='ls --tree'                                                         # Use eza as tree
 fi
 
-if command -v github-copilot-cli &> /dev/null; then
-    eval "$(github-copilot-cli alias -- "$0")" # Load Github Copilot CLI
+if command -v gh &> /dev/null && gh copilot &> /dev/null; then
+    alias '??'='gh copilot suggest'
+    alias '?!'='gh copilot explain'
 fi
 
 if command -v nvim &> /dev/null; then
