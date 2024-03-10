@@ -167,7 +167,8 @@ zinit light starship/starship
 # Plugins
 # - - - - - - - - - - - - - - - - - - - -
 
-# Load Syntax Highlighting
+# Load Syntax Highlighting with catppuccin theme
+zinit ice atload'fast-theme -q XDG:catppuccin-mocha'
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 # Load Colorize
