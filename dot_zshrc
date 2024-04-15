@@ -219,6 +219,27 @@ if command -v eza &> /dev/null; then
     alias tree='ls --tree'                                                         # Use eza as tree
 fi
 
+if command -v bat &> /dev/null; then
+    if [[ ! -f $HOME/.cache/bat/cache.lock ]]; then
+        touch $HOME/.cache/bat/cache.lock
+        bat cache --build
+    fi
+
+    export BAT_THEME='Catppuccin Mocha'
+    export MANPAGER='sh -c "col -bx | bat -l man -p"'
+    export MANROFFOPT='-c'
+
+    alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'         # Use bat for help
+    alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+
+    alias -g cat='bat --paging=never --style=plain'                         # Use bat as cat
+    alias -g less='bat --paging=always --style=plain'                       # Use bat as less
+
+    tail() {
+        command tail $@ | bat --paging=never --style=plain -l log        # Use bat as tail
+    }
+fi
+
 if command -v gh &> /dev/null && gh copilot &> /dev/null; then
     alias '??'='gh copilot suggest'
     alias '?!'='gh copilot explain'
