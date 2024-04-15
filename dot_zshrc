@@ -220,8 +220,7 @@ if command -v eza &> /dev/null; then
 fi
 
 if command -v bat &> /dev/null; then
-    if [[ ! -f $HOME/.cache/bat/cache.lock ]]; then
-        touch $HOME/.cache/bat/cache.lock
+    if [[ ! -d $HOME/.cache/bat ]]; then
         bat cache --build
     fi
 
