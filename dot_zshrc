@@ -192,10 +192,6 @@ zinit light trapd00r/LS_COLORS
 zinit ice atload'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down'
 zinit light zsh-users/zsh-history-substring-search
 
-# Load NVM
-zinit ice atinit'export NVM_COMPLETION=true; export NVM_AUTO_USE=true'
-zinit light lukechilds/zsh-nvm
-
 # Load ZSH-Completions. Recommended to be loaded last.
 zinit ice wait blockf lucid atpull'zinit creinstall -q .'
 zinit load zsh-users/zsh-completions
@@ -247,6 +243,10 @@ fi
 if command -v nvim &> /dev/null; then
     alias vim='nvim'
     export EDITOR='nvim'
+fi
+
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env --use-on-cd)"
 fi
 
 if [[ "$TERM" == "xterm-kitty" ]]; then
