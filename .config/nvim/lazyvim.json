@@ -1,6 +1,10 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.copilot"
+    "lazyvim.plugins.extras.coding.copilot",
+    "lazyvim.plugins.extras.coding.copilot-chat",
+    "lazyvim.plugins.extras.ui.mini-animate",
+    "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
     "NEWS.md": "5204"
